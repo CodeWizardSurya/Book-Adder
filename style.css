@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url('todo\ image.avif') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+
+.navbar {
+    background-color: rgba(52, 152, 219, 0.9); /* bright blue */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.container {
+    padding: 30px 15px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Book cards */
+.book-container {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+    color: #34495e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.book-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
+}
+
+.book-container h2 {
+    color: #2980b9; /* darker blue */
+    margin-bottom: 8px;
+}
+
+.book-container h5 {
+    font-weight: 500;
+    color: #3498db;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.book-container p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.book-container button {
+    align-self: flex-start;
+    background-color: #3498db;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 18px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.book-container button:hover {
+    background-color: #2980b9;
+}
+
+/* Add Book floating button */
+.add-button {
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    padding: 22px 28px;
+    font-size: 36px;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Popup overlay */
+.popup-overlay {
+    background-color: rgba(44, 62, 80, 0.75);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+/* Popup box */
+.popup-box {
+    background-color: white;
+    width: 40%;
+    max-width: 480px;
+    padding: 40px 30px;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+}
+
+/* Popup inputs */
+.popup-box input,
+.popup-box textarea {
+    background: #ecf0f1;
+    border: none;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #2c3e50;
+    resize: vertical;
+    transition: background-color 0.3s ease;
+}
+
+.popup-box input:focus,
+.popup-box textarea:focus {
+    background-color: #d6e9fc;
+    outline: none;
+}
+
+/* Placeholder color */
+.popup-box input::placeholder,
+.popup-box textarea::placeholder {
+    color: #7f8c8d;
+}
+
+/* Popup buttons */
+.popup-box button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    margin: 10px 5px 0 0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.popup-box button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .book-container {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+    .navbar h1 {
+        font-size: 1.5rem;
+    }
+    .book-container h2 {
+        font-size: 1.4rem;
+    }
+    .book-container h5 {
+        font-size: 1rem;
+    }
+    .book-container p {
+        font-size: 0.9rem;
+    }
+    .popup-box {
+        width: 90%;
+        padding: 25px 20px;
+    }
+    .add-button {
+        font-size: 32px;
+        padding: 20px 26px;
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+    .book-container {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 15px;
+    }
+    .navbar h1 {
+        font-size: 1.3rem;
+    }
+    .book-container h2 {
+        font-size: 1.2rem;
+    }
+    .book-container h5 {
+        font-size: 0.9rem;
+    }
+    .book-container p {
+        font-size: 0.85rem;
+    }
+    .add-button {
+        font-size: 28px;
+        padding: 18px 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

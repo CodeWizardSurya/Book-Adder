@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Adder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>Book Adder</h1>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <h2>Eleanor & Park</h2>
+            <h5>Rainbow Rowell</h5>
+            <p>
+               Eleanor & Park" tells the story of two misfit teenagers who find love through their shared passion for music and comics. 
+               Set in 1986, their relationship faces challenges from bullying and family struggles, capturing the bittersweet experience of 
+               first love and self-discovery
+            </p>
+            <button onclick="deleteBook(event)">Delete</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay"></div>
+
+    <div class="popup-box">
+        <h2>Add Book</h2>
+        <form id="book-form">
+            <input type="text" placeholder="Book Title" id="book-title-input" required />
+            <input type="text" placeholder="Book Author" id="book-author-input" required />
+            <textarea placeholder="Short Description" id="book-description-input" rows="4" required></textarea>
+            <button type="submit" id="add-book">Add</button>
+            <button type="button" id="cancel-popup">Cancel</button>
+        </form>
+    </div>
+
+    <button class="add-button" id="add-popup-button">+</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
